@@ -120,14 +120,10 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#believes"/>
                 <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:complementOf>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl#imposed_on"/>
-                                <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Excusing_Fact"/>
-                            </owl:Restriction>
-                        </owl:complementOf>
-                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl#imposed_on"/>
+                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Excusing_Fact"/>
+                    </owl:Restriction>
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
@@ -144,14 +140,10 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#believes"/>
                 <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:complementOf>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl#imposed_on"/>
-                                <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Justifying_Fact"/>
-                            </owl:Restriction>
-                        </owl:complementOf>
-                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl#imposed_on"/>
+                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Justifying_Fact"/>
+                    </owl:Restriction>
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
