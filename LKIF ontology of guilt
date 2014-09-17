@@ -186,6 +186,43 @@
     
 
 
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Actus_Reus -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Actus_Reus">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#Part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Addressee_Of_Criminal_Norm -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Addressee_Of_Criminal_Norm">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#Part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Bipartite_System_Of_Crime -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Bipartite_System_Of_Crime">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#component"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Actus_Reus"/>
+                            <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Mens_Rea"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#Whole"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Confusion -->
 
     <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Confusion">
@@ -206,6 +243,39 @@
         <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Action"/>
         <owl:disjointWith rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Self_Defense"/>
         <rdfs:comment rdf:datatype="&xsd;string">An unjustified action causing danger to another agent.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Description_Of_Offence -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Description_Of_Offence">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#component"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Actus_Reus"/>
+                                    <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Addressee_Of_Criminal_Norm"/>
+                                    <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Mens_Rea"/>
+                                    <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Social_Harm"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Actus_Reus"/>
+                                    <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Mens_Rea"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#Whole"/>
     </owl:Class>
     
 
@@ -275,6 +345,14 @@
     
 
 
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Excuse -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Excuse">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#Whole"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Excusing_Fact -->
 
     <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Excusing_Fact">
@@ -307,6 +385,14 @@
     
 
 
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Justification -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Justification">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#Whole"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Justifying_Fact -->
 
     <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Justifying_Fact">
@@ -318,6 +404,14 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#Fact"/>
         <rdfs:comment rdf:datatype="&xsd;string">A fact that justifies an offence.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Mens_Rea -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Mens_Rea">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#Part"/>
     </owl:Class>
     
 
@@ -371,6 +465,29 @@
     <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Partial_Understanding">
         <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Understanding"/>
         <rdfs:comment rdf:datatype="&xsd;string">The partial understanding of legal expressions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Quadripartite_System_Of_Crime -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Quadripartite_System_Of_Crime">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#component"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Actus_Reus"/>
+                            <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Addressee_Of_Criminal_Norm"/>
+                            <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Mens_Rea"/>
+                            <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Social_Harm"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#Whole"/>
     </owl:Class>
     
 
@@ -449,6 +566,22 @@
     
 
 
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Social_Harm -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Social_Harm">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#Part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Social_Harm_Greater_Than_Minimal -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Social_Harm_Greater_Than_Minimal">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#Whole"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Standard_Of_Conduct -->
 
     <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Standard_Of_Conduct">
@@ -476,6 +609,48 @@
 
     <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Terror">
         <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Force"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Tripartite_System_Of_Crime -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Tripartite_System_Of_Crime">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#component"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Description_Of_Offence"/>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Description_Of_Offence"/>
+                                            <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Social_Harm_Greater_Than_Minimal"/>
+                                            <owl:Class>
+                                                <owl:complementOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Excuse"/>
+                                            </owl:Class>
+                                            <owl:Class>
+                                                <owl:complementOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Justification"/>
+                                            </owl:Class>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                    <owl:Class>
+                                        <owl:complementOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Excuse"/>
+                                    </owl:Class>
+                                </owl:unionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:complementOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Justification"/>
+                            </owl:Class>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/mereology.owl#Whole"/>
     </owl:Class>
     
 
