@@ -11,11 +11,11 @@ Guilt in the majority of common law countries and some of the civil law countrie
 - negligence - definition of negligence is similar to recklessness except that person should be aware of the risk, so it is prohibited not to be unaware (not believe); class name: Negligence.
 
 Guilt in the rest of civil law countries consists of (list is not complete and depends on the particular jurisdiction):
-- excessive self-defence,
-- duress,
-- mistake of justifying fact,
-- mistake of excusing fact,
-- mistake of law,
-- insanity,
-- diminished responsibility,
-- superior orders.
+- excessive self-defense - happens when actor exceeds the limits of self-defence out of confusion, fear or terror; class name: Excessive_Self_Defense;
+- duress - differs from excessive self-defense by the lack of the Danger (Action) Change; calss name: Action_Under_Duress;
+- mistake of justifying fact - an Action under the belief that there is some justifying fact; class name: Action_While_Under_Mistake_Of_Justifying_Fact;
+- mistake of excusing fact - an Action under the belief that there is some excusing fact; class name: Action_While_Under_Mistake_Of_Excusing_Fact;
+- mistake of law - an Action under the belief that there is no offence; class name: Action_While_Under_Mistake_Of_Law;
+- insanity - an Action committed without understanding legal norms expressed in some way; class name: Action_While_Insane;
+- diminished responsibility - an Action committed with partial understanding of legal norms expressed in some way; class name: Action_With_Diminished_Responsibility;
+- superior orders - an Action of committing a crime under a superior order; calss name: Action_Under_Superior_Order.
