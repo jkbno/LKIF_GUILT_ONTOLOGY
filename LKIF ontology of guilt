@@ -1,0 +1,527 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#"
+     xml:base="http://www.estrellaproject.org/lkif-core/lkif-extended.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl">
+        <owl:versionInfo rdf:datatype="&xsd;string">
+	LKIF Core, version 1.1, copyright (C) 2008, the ESTRELLA consortium
+	</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="&xsd;string">
+	Partner contributions from the University of Amsterdam (UvA), the University of Bologna (UNIBO) and the Fraunhofer institute (FOKUS)
+
+	Editor:       Rinke Hoekstra (UvA)
+	Authors:      Rinke Hoekstra (UvA), Alexander Boer (UvA), Kasper van den Berg (UvA)
+	Contributors: Joost Breuker (UvA), Thomas Gordon (FOKUS), Monica Palmirani (UNIBO), Rosella Rubino (UNIBO)
+	</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="&xsd;string">
+	The LKIF-Core ontology, version 1.0, is part of Deliverable 1.4 of the European project for Standardised Transparent Representations in order to Extend Legal Accessibility (ESTRELLA, IST-2004-027665), http://www.estrellaproject.org
+
+	The use of this ontology, and the OWL files through which it is distributed, is covered by the GNU Lesser General Public License (LGPL), version 2.1 (http://www.gnu.org/copyleft/lesser.html) in as far as the copyright is not covered by additional restrictions of the ESTRELLA consortium agreement (info@estrellaproject.org). The LGPL license places copyright restrictions on the ontology itself but does not apply these restrictions to software that merely links with concepts defined in the ontology library. Please read the license restrictions before using this work. 
+
+	</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="&xsd;string">
+	This module is part of LKIF-Core, version 1.1, ESTRELLA, IST-2004-027665
+	</owl:versionInfo>
+        <owl:imports rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-core.owl"/>
+        <owl:imports rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-rules.owl"/>
+        <owl:imports rdf:resource="http://www.estrellaproject.org/lkif-core/time-modification.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_Under_Duress -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_Under_Duress">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#allowed_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Obligation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl#imposed_on"/>
+                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Force"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Action"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Excused action committed under the influence of some force. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_Under_Superior_Order -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_Under_Superior_Order">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#commanded_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Obliged"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#disallowed_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Prohibition"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Action"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An action of committing a crime under a superior order.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_While_Insane -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_While_Insane">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Understanding"/>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Action"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An action committed without understanding legal norms expressed in some way.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_While_Under_Mistake_Of_Excusing_Fact -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_While_Under_Mistake_Of_Excusing_Fact">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#believes"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl#imposed_on"/>
+                                <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Excusing_Fact"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Action"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An action under the belief that there is some excusing fact</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_While_Under_Mistake_Of_Justifying_Fact -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_While_Under_Mistake_Of_Justifying_Fact">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#believes"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl#imposed_on"/>
+                                <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Justifying_Fact"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Action"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An action under the belief that there is some justifying fact</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_While_Under_Mistake_Of_Law -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_While_Under_Mistake_Of_Law">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#holds"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Prohibition"/>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Action"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An action under the belief that there is no offence.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_With_Dimished_Responsiblity -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Action_With_Dimished_Responsiblity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Partial_Understanding"/>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Action"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An action committed with partial understanding of legal norms expressed in some way.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Confusion -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Confusion">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Force"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Danger -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Danger">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#disallowed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Prohibition"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Action"/>
+        <owl:disjointWith rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Self_Defense"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An unjustified action causing danger to another agent.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Direct_Intention -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Direct_Intention">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Disallowed_Direct_Intention -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Disallowed_Direct_Intention">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Direct_Intention"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#towards"/>
+                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Disallowed"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Direct_Intention"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The propositional content (i.e. that which is intended) of the intention is disallowed. Interesting concept for establishing mens rea (guilty mind), although &apos;disallowed&apos; is a weaker qualification than criminal. This concerns a situation of purposely committing a crime. The crime committed does not have to match the crime intended for establishing intent!</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Disallowed_Oblique_Intention -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Disallowed_Oblique_Intention">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Oblique_Intention"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#towards"/>
+                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Disallowed"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Oblique_Intention"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The propositional content (i.e. that which is intended) of the intention is disallowed. Interesting concept for establishing mens rea (guilty mind), although &apos;disallowed&apos; is a weaker qualification than criminal. This concerns a situation of knowingly committing a crime. The crime committed does not have to match the crime intended for establishing intent!</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Excessive_Self_Defense -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Excessive_Self_Defense">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl#imposed_on"/>
+                <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Force"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Self_Defense"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Excused action against imminent danger when there is some other possibility than to commit an offence but committed under the influence of some force. </rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">NOTE: Under the tripartite system of crime excuse is a constitutive part of crime, so it is under the Allowed class.
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Excusing_Fact -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Excusing_Fact">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#allowed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Obligation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#Fact"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A fact that excuses an offence.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Fear -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Fear">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Force"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Force -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Force">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#Proposition"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Mental state that creates an attitude of an agent to act.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Justifying_Fact -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Justifying_Fact">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#allowed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Obligation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#Fact"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A fact that justifies an offence.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Negligence -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Negligence">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#believes"/>
+                                <owl:someValuesFrom>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#towards"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Risk"/>
+                                    </owl:Restriction>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#disallowed_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Prohibition"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#Propositional_Attitude"/>
+        <owl:disjointWith rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Risk"/>
+        <owl:disjointWith rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Standard_Of_Conduct"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An agent should know that there is some risk connected with his/her action.
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Oblique_Intention -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Oblique_Intention">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#Intention"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Intention is where the agent expects certain consequences of his or her actions but does not desire those consequences to occur.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Partial_Understanding -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Partial_Understanding">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Understanding"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The partial understanding of legal expressions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Recklessness -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Recklessness">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Disallowed_Direct_Intention"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#believes"/>
+                                <owl:someValuesFrom>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#towards"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Risk"/>
+                                    </owl:Restriction>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#Propositional_Attitude"/>
+        <rdfs:comment rdf:datatype="&xsd;string">An agent thinks it is not true that there is some risk connected with his/her action.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Risk -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Risk">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#towards"/>
+                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Disallowed"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl#imposed_on"/>
+                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Action"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#Evaluative_Proposition"/>
+        <owl:disjointWith rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Standard_Of_Conduct"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Potential consequences of an action that are dangerous and unjustified.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Self_Defense -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Self_Defense">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#allowed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Obligation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/time.owl#immediately_before"/>
+                <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Danger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">Justified action against imminent danger if there is no other possibility than to commit an offence.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Standard_Of_Conduct -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Standard_Of_Conduct">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#towards"/>
+                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Allowed"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/role.owl#imposed_on"/>
+                        <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/action.owl#Action"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#Evaluative_Proposition"/>
+        <rdfs:comment rdf:datatype="&xsd;string">From a normative approach to guilt: a type of behaviour that is expected of an agent from an abstract, law-abiding point of view.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Terror -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Terror">
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Force"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Understanding -->
+
+    <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Understanding">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#towards"/>
+                <owl:someValuesFrom rdf:resource="http://www.estrellaproject.org/lkif-core/norm.owl#Legal_Expression"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.estrellaproject.org/lkif-core/expression.owl#Propositional_Attitude"/>
+        <rdfs:comment rdf:datatype="&xsd;string">The understanding of legal expressions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Danger"/>
+            <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Risk"/>
+            <rdf:Description rdf:about="http://www.estrellaproject.org/lkif-core/lkif-extended.owl#Standard_Of_Conduct"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
